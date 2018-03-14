@@ -8,6 +8,7 @@ import {ViewEncRootComponent} from './viewEncapsulation/view-enc-root.component'
 import {ViewEncRootNativeComponent} from './viewEncapsulation/view-enc-root-native.component';
 import {ViewEncRootEmulatedComponent} from './viewEncapsulation/view-enc-root-emulated.component';
 import {DecExample1Component} from './decorators/dec-example1.component';
+import {DecExample2Component} from './decorators/dec-example2.component';
 
 export const appRoutes = [
   {
@@ -22,5 +23,6 @@ export const appRoutes = [
   {path: 'view-enc-none', component: ViewEncRootComponent},
   {path: 'view-enc-native', component: ViewEncRootNativeComponent},
   {path: 'view-enc-emulated', component: ViewEncRootEmulatedComponent},
-  {path: 'dec-ex1', component: DecExample1Component}
+  {path: 'dec-ex1', component: DecExample1Component},
+  {path: 'dec-ex2', component: DecExample2Component}
 ];

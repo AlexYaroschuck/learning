@@ -1,9 +1,8 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {NgModule, TemplateRef} from '@angular/core';
+import {Injector, NgModule, TemplateRef} from '@angular/core';
 
 
 import {AppComponent} from './app.component';
-import {WizardModule} from 'ngx-wizard';
 import {ReactiveFormsModule} from '@angular/forms';
 import {AnimationComponent} from './directives/aniamtion/animation.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -24,6 +23,7 @@ import {ViewEncRootComponent} from './viewEncapsulation/view-enc-root.component'
 import {ViewEncRootNativeComponent} from './viewEncapsulation/view-enc-root-native.component';
 import {ViewEncRootEmulatedComponent} from './viewEncapsulation/view-enc-root-emulated.component';
 import {DecExample1Component} from './decorators/dec-example1.component';
+import {DecExample2Component} from './decorators/dec-example2.component';
 
 
 @NgModule({
@@ -31,20 +31,27 @@ import {DecExample1Component} from './decorators/dec-example1.component';
     AppComponent, AnimationComponent, DependencyInjectionComponent,
     /*DI learn start*/
     TestComponent, Test2Component, Test3Component, GeneralTestComponent, PracticeExampleComponent,
-    PracticeExample3Component , PracticeExample2Component, InjectionTokenComponent,
+    PracticeExample3Component, PracticeExample2Component, InjectionTokenComponent,
     /*DI learn end*/
     /*View Encapsulation stat*/
     ViewEncExample1Component, ViewEncRootComponent, ViewEncRootNativeComponent, ViewEncRootEmulatedComponent,
     /*View Encapsulation stat*/
     /*-*/
-    DecExample1Component,
+    DecExample1Component, DecExample2Component
     /*-*/
   ],
   imports: [
-    BrowserModule, WizardModule, ReactiveFormsModule, BrowserAnimationsModule, RouterModule.forRoot(appRoutes)
+    BrowserModule, ReactiveFormsModule, BrowserAnimationsModule, RouterModule.forRoot(appRoutes)
   ],
   providers: [Data4Service],
   bootstrap: [AppComponent]
 })
 export class AppModule {
+  public static injector: Injector;
+
+  constructor(private injector: Injector) {
+    AppModule.injector = injector;
+  }
 }
+
+
