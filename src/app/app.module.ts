@@ -24,6 +24,7 @@ import {ViewEncRootNativeComponent} from './viewEncapsulation/view-enc-root-nati
 import {ViewEncRootEmulatedComponent} from './viewEncapsulation/view-enc-root-emulated.component';
 import {DecExample1Component} from './decorators/dec-example1.component';
 import {DecExample2Component} from './decorators/dec-example2.component';
+import {DecJsonPropertyComponent} from './decorators/dec-jsonProperty.component';
 
 
 @NgModule({
@@ -37,7 +38,7 @@ import {DecExample2Component} from './decorators/dec-example2.component';
     ViewEncExample1Component, ViewEncRootComponent, ViewEncRootNativeComponent, ViewEncRootEmulatedComponent,
     /*View Encapsulation stat*/
     /*-*/
-    DecExample1Component, DecExample2Component
+    DecExample1Component, DecExample2Component, DecJsonPropertyComponent
     /*-*/
   ],
   imports: [

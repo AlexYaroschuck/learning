@@ -69,7 +69,7 @@ function logMethod(target: any, key: string, descriptor: any) {
  * var C = (function () {
     function C() {
     }
-    C.prototype.foo = function (n) {
+    C.prototype.test = function (n) {
         return n * 2;
     };
     //read for defineProperty here https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty
@@ -135,7 +135,8 @@ function logClass(target: any) {
   // }
 
   const f: any = function (...args) {
-    console.log(`logClass -> constructorName: ${originalConstructor.name}`);
+    console.log(`logClass -> constructorName: ${originalConstructor}`);
+    console.dir(originalConstructor);
   };
 
   f.prototype = originalConstructor.prototype;
