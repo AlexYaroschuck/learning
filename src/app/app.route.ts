@@ -15,6 +15,7 @@ import {Container1Ex1Component} from './ng-templates/container-ex1.component';
 import {CustomNgIfComponent} from './ng-templates/custom-ng-if.component';
 import {TemSpinnerExampleComponent} from './ng-templates/tem-spinner-example.component';
 import {TemplateForExampleComponent} from './ng-templates/template-for-example.component';
+import {DynamicComponent} from './dynamic-components/dynamic.component';
 
 export const appRoutes = [
   {
@@ -36,5 +37,6 @@ export const appRoutes = [
   {path: 'container-ex1', component: Container1Ex1Component},
   {path: 'ng-if', component: CustomNgIfComponent},
   {path: 'spinner', component: TemSpinnerExampleComponent},
-  {path: 'template-for', component: TemplateForExampleComponent}
+  {path: 'template-for', component: TemplateForExampleComponent},
+  {path: 'dynamic', component: DynamicComponent}
 ];

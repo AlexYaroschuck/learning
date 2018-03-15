@@ -31,6 +31,8 @@ import {CustomNgIfComponent} from './ng-templates/custom-ng-if.component';
 import {MyIfDirective} from './ng-templates/my-if.directive';
 import {TemplateParamsComponent, TemSpinnerExampleComponent} from './ng-templates/tem-spinner-example.component';
 import {TemplateForExampleComponent} from './ng-templates/template-for-example.component';
+import {DynamicComponent, DynamicHelloComponent} from './dynamic-components/dynamic.component';
+import {TooltipContainerComponent} from 'ngx-bootstrap';
 
 
 @NgModule({
@@ -47,16 +49,21 @@ import {TemplateForExampleComponent} from './ng-templates/template-for-example.c
     DecExample1Component, DecExample2Component, DecJsonPropertyComponent,
     /*-*/
     /* | */
-    Container1Ex1Component,  TemplateEx1Component, CustomNgIfComponent, MyIfDirective, TemSpinnerExampleComponent,
-    TemplateParamsComponent, TemplateForExampleComponent
-    /* | */
+    Container1Ex1Component, TemplateEx1Component, CustomNgIfComponent, MyIfDirective, TemSpinnerExampleComponent,
+    TemplateParamsComponent, TemplateForExampleComponent,
+    /* || */
+    /* /\ */
+    DynamicComponent, DynamicHelloComponent,
+    TooltipContainerComponent
+    /* \/ */
   ],
   imports: [
     BrowserModule, ReactiveFormsModule, BrowserAnimationsModule, RouterModule.forRoot(appRoutes),
 
   ],
-  providers: [Data4Service, ],
-  bootstrap: [AppComponent]
+  providers: [Data4Service],
+  bootstrap: [AppComponent],
+  entryComponents: [DynamicHelloComponent]
 })
 export class AppModule {
   public static injector: Injector;
