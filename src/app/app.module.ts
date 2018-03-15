@@ -25,6 +25,12 @@ import {ViewEncRootEmulatedComponent} from './viewEncapsulation/view-enc-root-em
 import {DecExample1Component} from './decorators/dec-example1.component';
 import {DecExample2Component} from './decorators/dec-example2.component';
 import {DecJsonPropertyComponent} from './decorators/dec-jsonProperty.component';
+import {TemplateEx1Component} from './ng-templates/template-ex1.component';
+import {Container1Ex1Component} from './ng-templates/container-ex1.component';
+import {CustomNgIfComponent} from './ng-templates/custom-ng-if.component';
+import {MyIfDirective} from './ng-templates/my-if.directive';
+import {TemplateParamsComponent, TemSpinnerExampleComponent} from './ng-templates/tem-spinner-example.component';
+import {TemplateForExampleComponent} from './ng-templates/template-for-example.component';
 
 
 @NgModule({
@@ -38,13 +44,18 @@ import {DecJsonPropertyComponent} from './decorators/dec-jsonProperty.component'
     ViewEncExample1Component, ViewEncRootComponent, ViewEncRootNativeComponent, ViewEncRootEmulatedComponent,
     /*View Encapsulation stat*/
     /*-*/
-    DecExample1Component, DecExample2Component, DecJsonPropertyComponent
+    DecExample1Component, DecExample2Component, DecJsonPropertyComponent,
     /*-*/
+    /* | */
+    Container1Ex1Component,  TemplateEx1Component, CustomNgIfComponent, MyIfDirective, TemSpinnerExampleComponent,
+    TemplateParamsComponent, TemplateForExampleComponent
+    /* | */
   ],
   imports: [
-    BrowserModule, ReactiveFormsModule, BrowserAnimationsModule, RouterModule.forRoot(appRoutes)
+    BrowserModule, ReactiveFormsModule, BrowserAnimationsModule, RouterModule.forRoot(appRoutes),
+
   ],
-  providers: [Data4Service],
+  providers: [Data4Service, ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
