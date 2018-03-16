@@ -16,6 +16,7 @@ import {CustomNgIfComponent} from './ng-templates/custom-ng-if.component';
 import {TemSpinnerExampleComponent} from './ng-templates/tem-spinner-example.component';
 import {TemplateForExampleComponent} from './ng-templates/template-for-example.component';
 import {DynamicComponent} from './dynamic-components/dynamic.component';
+import {InterceptorExamples1Component} from './Intercept/interceptor-examples-1';
 
 export const appRoutes = [
   {
@@ -38,5 +39,6 @@ export const appRoutes = [
   {path: 'ng-if', component: CustomNgIfComponent},
   {path: 'spinner', component: TemSpinnerExampleComponent},
   {path: 'template-for', component: TemplateForExampleComponent},
-  {path: 'dynamic', component: DynamicComponent}
+  {path: 'dynamic', component: DynamicComponent},
+  {path: 'interception-ex1', component: InterceptorExamples1Component}
 ];

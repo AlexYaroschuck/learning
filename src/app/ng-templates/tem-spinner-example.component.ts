@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, OnInit, TemplateRef, ViewChild, ViewContainerRef} from '@angular/core';
 
 @Component({
   selector: 'tem-spinner-ex',
@@ -12,13 +12,23 @@ import {Component, OnInit} from '@angular/core';
     </ng-template>
 
     <ng-container *ngTemplateOutlet="spinner"></ng-container>
+    <ng-container #spinnerContainer></ng-container>
   `
 })
-export class TemSpinnerExampleComponent implements OnInit {
+export class TemSpinnerExampleComponent implements OnInit, AfterViewInit {
+  @ViewChild('spinnerContainer', {read: ViewContainerRef}) spinnerContainer: ViewContainerRef;
+  @ViewChild('spinner') spinnerTemplate: TemplateRef<any>;
+
   public isLoading = true;
 
   public ngOnInit(): void {
     setTimeout(x => this.isLoading = false, 2000);
+  }
+
+  public ngAfterViewInit() {
+    const view = this.spinnerTemplate.createEmbeddedView(null);
+
+    this.spinnerContainer.insert(view);
   }
 }
 
@@ -32,5 +42,6 @@ export class TemSpinnerExampleComponent implements OnInit {
     <ng-container *ngTemplateOutlet="myTemplate;context:{str: 'hello'}"></ng-container>`
 })
 export class TemplateParamsComponent {
+
 
 }

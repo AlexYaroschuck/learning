@@ -33,6 +33,8 @@ import {TemplateParamsComponent, TemSpinnerExampleComponent} from './ng-template
 import {TemplateForExampleComponent} from './ng-templates/template-for-example.component';
 import {DynamicComponent, DynamicHelloComponent} from './dynamic-components/dynamic.component';
 import {TooltipContainerComponent} from 'ngx-bootstrap';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import {Interceptor1, Interceptor2, InterceptorExamples1Component} from './Intercept/interceptor-examples-1';
 
 
 @NgModule({
@@ -54,14 +56,20 @@ import {TooltipContainerComponent} from 'ngx-bootstrap';
     /* || */
     /* /\ */
     DynamicComponent, DynamicHelloComponent,
-    TooltipContainerComponent
+    TooltipContainerComponent,
     /* \/ */
+    /*-Interception start-*/
+    InterceptorExamples1Component
+    /*-Interception end-*/
   ],
   imports: [
     BrowserModule, ReactiveFormsModule, BrowserAnimationsModule, RouterModule.forRoot(appRoutes),
-
+    HttpClientModule
   ],
-  providers: [Data4Service],
+  providers: [Data4Service,
+    {provide: HTTP_INTERCEPTORS, useClass: Interceptor1, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: Interceptor2, multi: true}
+  ],
   bootstrap: [AppComponent],
   entryComponents: [DynamicHelloComponent]
 })
