@@ -59,7 +59,7 @@ export class TemplateEx1Component {
   
 `;
   tempateExample2_2 = `<ng-template ngFor let-data [ngForOf]="someData" let-i="index">
-  <div [class.odd]="odd">({{i}}) {{hero.name}}</div>
+  <div >({{i}}) {{data}}</div>
   </ng-template>`;
   someData: string[] = ['1', '2', 'etc'];
 
